@@ -1,4 +1,7 @@
 # TiDictionary
+
+> The right word is always a power, and communicates its definiteness to our action.
+
 A dictionary of different concepts in TiDB/PD/TiKV.
 
 Hope this will help us to form an [Ubiquitous Language](https://www.martinfowler.com/bliki/UbiquitousLanguage.html).
