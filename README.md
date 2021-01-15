@@ -10,3 +10,8 @@ Currently this is represented as a naive table.
 
 [中文版](https://github.com/longfangsong/TiDictionary/blob/main/zh.md) [English](https://github.com/longfangsong/TiDictionary/blob/main/en.md)
 
+⬇️ A sub-project, though the dictionary answer the "what is xxx" problems, TiManual will try to answer "how to yyy" problems.
+
+## TiManual
+
+[中文版](https://github.com/longfangsong/TiDictionary/blob/main/manual_zh.md) [English](https://github.com/longfangsong/TiDictionary/blob/main/manual_en.md)
