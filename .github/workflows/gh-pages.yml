@@ -16,11 +16,13 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
       - name: Install dependencies
-        run: yarn && yarn add -g ts-node
+        run: yarn
       - name: Generate Data
         run: |
-          ts-node generate_json.ts
+          tsc generate_json.ts
+          node generate_json
           cp ./en.json ./src/assets/
+          rm ./generate_json.js
       - name: Build site
         run: |
           yarn build --base=/ti-dictionary
@@ -29,5 +31,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: public
+          FOLDER: dist
           CLEAN: true
