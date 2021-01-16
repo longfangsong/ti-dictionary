@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+      - name: Install dependencies
+        run: yarn && yarn add -g ts-node
+      - name: Generate Data
+        run: |
+          ts-node generate_json.ts
+          cp ./en.json ./src/assets/
+      - name: Build site
+        run: |
+          yarn build --base=/ti-dictionary
+      - name: Publish on GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: public
+          CLEAN: true
