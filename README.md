@@ -1,3 +1,5 @@
+⚠️：Archieved, upgrade to [Tipedia](https://github.com/longfangsong/tipedia) please.
+
 # TiDictionary
 
 > The right word is always a power, and communicates its definiteness to our action.
